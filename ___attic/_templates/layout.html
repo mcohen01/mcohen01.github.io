@@ -1,0 +1,85 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Slab%3A300%2C400%2C700&#038;subset=latin%2Clatin-ext' media='all' />
+  
+    <style>
+      a { 
+        color: #08659c !important; 
+        text-decoration: none !important;
+      }
+      a:hover { color: #0096ca !important; }
+
+      a:hover, a:visited, a:link, a:active {
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      .notebox {
+        background-color: #EEE;
+        border: 1px solid #CCC;
+        padding: 10px 20px 10px 20px;
+      }
+
+      div.highlight {
+        border: 1px solid #CCC;
+        background-color: #EEE;
+      }
+
+      blockquote {
+        border-left-color: rgb(236, 238, 239);
+        border-left-style: solid;
+        border-left-width: 4.5px;
+        padding-bottom:9px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 9px;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      table.docutils th, td {
+        padding: 8px !important;
+        text-align: left;
+        border: 1px solid #d0cece !important;
+      }
+
+      tbody tr:nth-child(odd) {
+        background: #eee;
+      }
+
+      table.docutils {
+        border: 1px solid #d0cece !important;
+        box-shadow: none !important;
+      }
+
+      td {
+        color: #4f5254;
+      }
+
+
+      body {
+        font-family: 'Roboto Slab';
+        color: #4f5254;
+      }
+
+      div.body {
+        max-width: 880px !important;
+      }
+
+      div.body h1 {
+        font-size: 180%;
+      }
+
+      div.footer {
+        margin: 20px 20px 30px 30px;
+      }
+
+      div.body p {
+        hyphens: none !important;
+      }
+    </style>  
+{% endblock %}
+
