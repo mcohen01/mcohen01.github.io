@@ -208,13 +208,13 @@
 <div class="line"><br /></div>
 </div>
 <p>This is hourly count data of resource utilization in AWS. Plotting the full dataset suggests at least one seasonal component.</p>
-<img alt="../_images/hourly_ts.png" src="../_images/hourly_ts.png" />
+<img alt="../images/hourly_ts.png" src="../images/hourly_ts.png" />
 <p>Plotting a one month subset of the data as well as a two week subset gives a clearer picture.</p>
-<img alt="../_images/hourly_ts_one_month.png" src="../_images/hourly_ts_one_month.png" />
-<img alt="../_images/hourly_ts_two_weeks.png" src="../_images/hourly_ts_two_weeks.png" />
+<img alt="../images/hourly_ts_one_month.png" src="../images/hourly_ts_one_month.png" />
+<img alt="../images/hourly_ts_two_weeks.png" src="../images/hourly_ts_two_weeks.png" />
 <p>The graphs suggest a daily and weekly cycle are present. Plots of all weekdays and all weekend days provide further evidence.</p>
-<img alt="../_images/hourly_ts_weekdays.png" src="../_images/hourly_ts_weekdays.png" />
-<img alt="../_images/hourly_ts_weekends.png" src="../_images/hourly_ts_weekends.png" />
+<img alt="../images/hourly_ts_weekdays.png" src="../images/hourly_ts_weekdays.png" />
+<img alt="../images/hourly_ts_weekends.png" src="../images/hourly_ts_weekends.png" />
 <p>Time series data often contain multiple seasonal components which can make forecasting challenging. If the process producing the data is somehow tied to human activity the time series will often exhibit multiple cycles, such as the daily and weekly cycles we see above. Amazon Forecast offers several different algorithms for analysing time series data, including the familiar ETS and ARIMA models, as well as <a class="reference external" href="https://facebook.github.io/prophet/">Prophet’s GAM</a> and Amazon’s own <a class="reference external" href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-recipe-deeparplus.html">RNN implementation</a>.</p>
 <p>Unfortunately, Amazon Forecast’s ARIMA interface doesn’t expose the same set of knobs you can fiddle with when you’re working directly in R. We specified hourly frequency of the time series, <strong>as there does not appear to be any way to specify multiple seasonal periods in Amazon Forecast.</strong></p>
 <div class="highlight-clojure notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">fc/create-predictor</span> <span class="ss">:input-data-config</span> <span class="p">{</span>
@@ -233,7 +233,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<img alt="../_images/forecast_arima.png" src="../_images/forecast_arima.png" />
+<img alt="../images/forecast_arima.png" src="../images/forecast_arima.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -245,7 +245,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<img alt="../_images/forecast_deep_ar_plus.png" src="../_images/forecast_deep_ar_plus.png" />
+<img alt="../images/forecast_deep_ar_plus.png" src="../images/forecast_deep_ar_plus.png" />
 <p>In the R community, the <a class="reference external" href="http://pkg.robjhyndman.com/forecast/">forecast</a> package (though technically superceded by <code class="docutils literal notranslate"><span class="pre">fable</span></code>) has long been the goto package for time series analysis, particularly for its <a class="reference external" href="http://pkg.robjhyndman.com/forecast/reference/auto.arima.html">auto.arima()</a> function. Hyndman’s book has a <a class="reference external" href="https://otexts.com/fpp2/dhr.html">couple</a> of <a class="reference external" href="https://otexts.com/fpp2/complexseasonality.html">good sections</a> on using dynamic harmonic regression to model time series with multiple seasonal components. The model with Fourier terms and R code would look something like the following.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -262,8 +262,8 @@ y_t = \beta_0 + \beta x_t + \sum_{k=1}^K[\alpha_k s_k(t) + \gamma_k c_k(t)] + e_
 </pre></div>
 </div>
 <p>Here we specify a two element vector as <code class="docutils literal notranslate"><span class="pre">K</span></code>, generating 24 Fourier terms (12 sin and cosine terms) to model the two seasonal components, as opposed to a scalar, which is what the <a class="reference external" href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-recipe-arima.html">Amazon Forecast docs</a> seem to suggest is what you get when you choose their ARIMA algorithm. (It’s unclear to me if they’re literally invoking R and the <code class="docutils literal notranslate"><span class="pre">forecast</span></code> package behind the scenes.) <code class="docutils literal notranslate"><span class="pre">auto.arima()</span></code> also gives you back the upper and lower bounds for the 80 and 95 percentiles, which is quite handy to get an idea of the uncertainty in the forecast. (The plot below links to a larger image with the 95% bounds shown.) MASE was .73. MAPE was .89.</p>
-<a class="reference internal image-reference" href="../_images/regression_arima_large.png"><img alt="../_images/regression_arima_large.png" src="../_images/regression_arima_large.png" style="width: 0px; height: 0px;" /></a>
-<a class="reference external image-reference" href="../_images/regression_arima_large.png"><img alt="../_images/regression_arima.png" src="../_images/regression_arima.png" /></a>
+<a class="reference internal image-reference" href="../images/regression_arima_large.png"><img alt="../images/regression_arima_large.png" src="../images/regression_arima_large.png" style="width: 0px; height: 0px;" /></a>
+<a class="reference external image-reference" href="../images/regression_arima_large.png"><img alt="../images/regression_arima.png" src="../images/regression_arima.png" /></a>
 <p>So, at least for time series data with multiple seasonal components, the forecast package’s <code class="docutils literal notranslate"><span class="pre">auto.arima()</span></code> clearly yields the best performing model compared against Amazon Forecast’s available algorithms. Given how long it takes to create predictors and forecasts using the AWS service, I really do wonder who exactly is using Forecast and for what use case.</p>
 </div>
 
