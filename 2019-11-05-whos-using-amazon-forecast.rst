@@ -62,19 +62,19 @@ The `hourly_ts.csv <https://gist.github.com/mcohen01/0b656c7b7accdb704de69f35969
 
 This is hourly count data of resource utilization in AWS. Plotting the full dataset suggests at least one seasonal component. 
 
-.. image:: ./_static/_images/hourly_ts.png
+.. image:: ./_images/hourly_ts.png
 
 Plotting a one month subset of the data as well as a two week subset gives a clearer picture.
 
-.. image:: ./_static/_images/hourly_ts_one_month.png
+.. image:: ./_images/hourly_ts_one_month.png
 
-.. image:: ./_static/_images/hourly_ts_two_weeks.png
+.. image:: ./_images/hourly_ts_two_weeks.png
 
 The graphs suggest a daily and weekly cycle are present. Plots of all weekdays and all weekend days provide further evidence.
 
-.. image:: ./_static/_images/hourly_ts_weekdays.png
+.. image:: ./_images/hourly_ts_weekdays.png
 
-.. image:: ./_static/_images/hourly_ts_weekends.png
+.. image:: ./_images/hourly_ts_weekends.png
 
 
 
@@ -99,7 +99,7 @@ Creating the predictor took quite a long time, at least 10 or 15 minutes. Unfort
 
 |
 
-.. image:: ./_static/_images/forecast_arima.png
+.. image:: ./_images/forecast_arima.png
 
 |
 
@@ -112,7 +112,7 @@ Amazon Forecast has an AutoML option when you create a predictor that simply tri
 
 |
 
-.. image:: ./_static/_images/forecast_deep_ar_plus.png
+.. image:: ./_images/forecast_deep_ar_plus.png
 
 
 
@@ -140,11 +140,11 @@ In the R community, the `forecast <http://pkg.robjhyndman.com/forecast/>`_ packa
 Here we specify a two element vector as ``K``, generating 24 Fourier terms (12 sin and cosine terms) to model the two seasonal components, as opposed to a scalar, which is what the `Amazon Forecast docs <https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-recipe-arima.html>`_ seem to suggest is what you get when you choose their ARIMA algorithm. (It's unclear to me if they're literally invoking R and the ``forecast`` package behind the scenes.) ``auto.arima()`` also gives you back the upper and lower bounds for the 80 and 95 percentiles, which is quite handy to get an idea of the uncertainty in the forecast. (The plot below links to a larger image with the 95% bounds shown.) MASE was .73. MAPE was .89.
 
 
-.. image:: ./_static/_images/regression_arima_large.png
+.. image:: ./_images/regression_arima_large.png
   :width: 0px
   :height: 0px
 
-.. image:: ./_static/_images/regression_arima.png
+.. image:: ./_images/regression_arima.png
   :target: ../_images/regression_arima_large.png
 
 

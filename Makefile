@@ -1,4 +1,5 @@
 deploy:
+	cp _website/index.html index.html
 	cp -R _static static
 	cp -R _images images
 
