@@ -12,8 +12,9 @@ deploy:
 	mkdir -p 2019-11-05-whos-using-amazon-forecast
 	cp _website/2019-11-05-whos-using-amazon-forecast/index.html 2019-11-05-whos-using-amazon-forecast
 	sed 's/\/_static/\/static/g' 2019-11-05-whos-using-amazon-forecast/index.html > __tmp.html
-	sed 's/\/_images/\/images/g' 2019-11-05-whos-using-amazon-forecast/index.html > __tmp.html
-	mv __tmp.html 2019-11-05-whos-using-amazon-forecast/index.html
+	sed 's/\/_images/\/images/g' __tmp.html > ___tmp.html
+	rm __tmp.html
+	mv ___tmp.html 2019-11-05-whos-using-amazon-forecast/index.html
 
 	git add --all
 	git commit -m "deploy"
