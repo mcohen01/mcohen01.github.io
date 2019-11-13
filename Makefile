@@ -19,3 +19,9 @@ deploy:
 	git add --all
 	git commit -m "deploy"
 	git push origin master
+
+dev:
+	pyenv local 3.6.4
+	rm -rf venv
+	virtualenv venv
+	pip install -r requirements.txt
