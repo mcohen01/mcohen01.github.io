@@ -21,7 +21,7 @@ deploy:
 	git push origin master
 
 dev:
-	pyenv local 3.6.4
+	pyenv local 3.6.9
 	rm -rf venv
 	virtualenv venv
 	pip install -r requirements.txt
