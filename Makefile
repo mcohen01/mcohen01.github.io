@@ -19,7 +19,7 @@ deploy:
 	mkdir -p 2020-04-22-what-we-did-during-the-thing
 	cp _website/2020-04-22-what-we-did-during-the-thing/index.html 2020-04-22-what-we-did-during-the-thing
 	sed 's/\/_static/\/static/g' 2020-04-22-what-we-did-during-the-thing/index.html > __tmp.html
-	sed 's/\/_images/\/images/g' __tmp.html > ___tmp.html
+	sed 's/\/_images/\/images\/quarantine/g' __tmp.html > ___tmp.html
 	rm __tmp.html
 	mv ___tmp.html 2020-04-22-what-we-did-during-the-thing/index.html
 
