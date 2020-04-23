@@ -106,7 +106,7 @@ olive oil and sherry, garlic, and red pepper flakes. The key is the olive oil. L
 
 |
 
-March 31. Kids in the neighborhood have been home for a couple weeks by then I think and are getting bored.
+March 31. By then kids in the neighborhood have been home for a couple weeks and were getting bored.
 
 .. image:: ./_images/quarantine/sidewalk_art_1.jpg
 |
