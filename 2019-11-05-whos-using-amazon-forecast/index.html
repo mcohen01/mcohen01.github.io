@@ -122,7 +122,7 @@
             
   <div class="section" id="who-s-using-amazon-forecast">
 <h1>Who’s Using Amazon Forecast?<a class="headerlink" href="#who-s-using-amazon-forecast" title="Permalink to this headline">¶</a></h1>
-<p>Nov 05, 2019</p>
+<p>_</p>
 <p>Six years ago the first release of <a class="reference external" href="https://github.com/mcohen01/amazonica">Amazonica</a> had support for something like 80% or 90% of the public api. Back then there were only maybe a handful of services that no one really used, now there seems to be all kinds of stuff I’ve never touched nor likely will. Greengrass? Groundstation? Never heard of ‘em. Managed Blockchain? Apparently <a class="reference external" href="https://aws.amazon.com/managed-blockchain/">it’s a thing.</a> A very crude indicator of how much demand there is for a new Amazon service is how quickly, if ever, a PR shows up adding support. (Amazonica is a Clojure client for AWS that just invokes the official Java SDK, so as soon as the service shows up in the Java SDK it takes like <a class="reference external" href="https://github.com/mcohen01/amazonica/pull/416/files">4 lines</a> of <a class="reference external" href="https://github.com/mcohen01/amazonica/pull/382/files">copy pasta</a> to add it to Amazonica.) Forecast has been available for <a class="reference external" href="https://aws.amazon.com/blogs/aws/amazon-forecast-time-series-forecasting-made-easy/">close to a year</a> and no one in the (admittedly small) Clojure community has had need for it thus far.</p>
 <p>Making your data available to Forecast is not too onerous, other than the fact that the <code class="docutils literal notranslate"><span class="pre">item_id</span></code> column is required even in the simplest case where you in fact have no associated dimensions, just a univariate time series. In such cases you just have to populate the column with the same value. The only thing else worth mentioning is that if you point Forecast at an S3 bucket your datasets need to be suffixed with .csv for Forecast to pick them up.</p>
 <div class="highlight-clojure notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">amazonica.aws.forecast</span> <span class="ss">:as</span> <span class="nv">fc</span><span class="p">])</span>
@@ -275,6 +275,13 @@ y_t = \beta_0 + \beta x_t + \sum_{k=1}^K[\alpha_k s_k(t) + \gamma_k c_k(t)] + e_
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
+  
+  Next: 
+  <a href="../2020-04-22-what-we-did-during-the-thing/">
+    What We Did During The Thing
+    
+  </a>
+  </span>
   
 </div>
 

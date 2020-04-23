@@ -6,7 +6,7 @@ Who's Using Amazon Forecast?
    :tags:
    :category:
 
-Nov 05, 2019
+_
 
 Six years ago the first release of `Amazonica <https://github.com/mcohen01/amazonica>`_ had support for something like 80% or 90% of the public api. Back then there were only maybe a handful of services that no one really used, now there seems to be all kinds of stuff I've never touched nor likely will. Greengrass? Groundstation? Never heard of 'em. Managed Blockchain? Apparently `it's a thing. <https://aws.amazon.com/managed-blockchain/>`_ A very crude indicator of how much demand there is for a new Amazon service is how quickly, if ever, a PR shows up adding support. (Amazonica is a Clojure client for AWS that just invokes the official Java SDK, so as soon as the service shows up in the Java SDK it takes like `4 lines <https://github.com/mcohen01/amazonica/pull/416/files>`_ of `copy pasta <https://github.com/mcohen01/amazonica/pull/382/files>`_ to add it to Amazonica.) Forecast has been available for `close to a year <https://aws.amazon.com/blogs/aws/amazon-forecast-time-series-forecasting-made-easy/>`_ and no one in the (admittedly small) Clojure community has had need for it thus far.
 
@@ -60,7 +60,7 @@ The `hourly_ts.csv <https://gist.github.com/mcohen01/0b656c7b7accdb704de69f35969
 |
 |
 
-This is hourly count data of resource utilization in AWS. Plotting the full dataset suggests at least one seasonal component. 
+This is hourly count data of resource utilization in AWS. Plotting the full dataset suggests at least one seasonal component.
 
 .. image:: ./_images/hourly_ts.png
 
@@ -80,7 +80,7 @@ The graphs suggest a daily and weekly cycle are present. Plots of all weekdays a
 
 Time series data often contain multiple seasonal components which can make forecasting challenging. If the process producing the data is somehow tied to human activity the time series will often exhibit multiple cycles, such as the daily and weekly cycles we see above. Amazon Forecast offers several different algorithms for analysing time series data, including the familiar ETS and ARIMA models, as well as `Prophet's GAM <https://facebook.github.io/prophet/>`_ and Amazon's own `RNN implementation <https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-recipe-deeparplus.html>`_.
 
-Unfortunately, Amazon Forecast's ARIMA interface doesn't expose the same set of knobs you can fiddle with when you're working directly in R. We specified hourly frequency of the time series, **as there does not appear to be any way to specify multiple seasonal periods in Amazon Forecast.**  
+Unfortunately, Amazon Forecast's ARIMA interface doesn't expose the same set of knobs you can fiddle with when you're working directly in R. We specified hourly frequency of the time series, **as there does not appear to be any way to specify multiple seasonal periods in Amazon Forecast.**
 
 .. highlight:: clojure
 .. code:: clojure
