@@ -130,7 +130,7 @@ Our house is the next one to the right.
 
     <style>
         video {
-          width: 90%;
+          width: 100%;
           height: auto;
         }
     </style>
