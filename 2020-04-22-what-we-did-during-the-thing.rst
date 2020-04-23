@@ -128,6 +128,12 @@ Our house is the next one to the right.
 
 .. raw:: html
 
+    <style>
+        video {
+          width: 90%;
+          height: auto;
+        }
+    </style>
     <video src="../_images/goats.mp4" controls></video>
 
 |
