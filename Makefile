@@ -23,9 +23,9 @@ deploy:
 	rm __tmp.html
 	mv ___tmp.html 2020-04-22-what-we-did-during-the-thing/index.html
 
-	git add --all
-	git commit -m "deploy"
-	git push origin master
+	# git add --all
+	# git commit -m "deploy"
+	# git push origin master
 
 dev:
 	pyenv local 3.6.9
