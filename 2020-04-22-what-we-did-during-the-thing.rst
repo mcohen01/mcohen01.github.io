@@ -126,6 +126,9 @@ Our house is the next one to the right.
 
 |
 
+We filmed this off the end of the back deck the day they had fenced them in right behind our house. Oliver was
+excited.
+
 .. raw:: html
 
     <style>
