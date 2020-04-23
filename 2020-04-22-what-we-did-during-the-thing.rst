@@ -8,12 +8,11 @@ What We Did During The Thing
 
 _
 
-So I'll start off going backwards from today and show you the photos I have on
-my phone going back to the beginning of all this. (You can click on any of them to
-enlarge.) I stopped going to my gym
-a couple of days after I stopped going in to work, which was Tuesday, March 10.
-So I had to find another place to run instead of the treadmill. I can't really run
-on concrete anymore, too much pounding, but the rubber belt on the treadmill offered
+So I'll start off going backwards from today and show you the photos Max and I took
+going back to the beginning of all this. (You can click on any of them to enlarge.)
+I stopped going to my gym a couple of days after I stopped going in to work, which was
+Tuesday, March 10. So I had to find another place to run instead of the treadmill. I can't
+really run on concrete anymore, too much pounding, but the rubber belt on the treadmill offered
 enough cushion. The only replacement I've found is on the astroturf of the football field
 just inside the track at the high school down the street. It's a pretty nice field. I
 go three or four times a week, sometime between 7 and 9am, hop the fence, and get 3 or 4 miles
